@@ -29,10 +29,10 @@ void setup() {
 void draw() {
   background(0);
 
-  nanika1.setTurnLimitX(300);
-  nanika2.setTurnLimitX(300);
-  nanika3.setTurnLimitX(300);
-  nanika4.setTurnLimitX(300);
+  nanika1.scanLimitX();
+  nanika2.scanLimitX();
+  nanika3.scanLimitX();
+  nanika4.scanLimitX();
 
   nanika1.move();
   nanika2.move();
@@ -66,8 +66,8 @@ class Nanika {
     return this.posY;
   }
 
-  void setTurnLimitX(float limitX) {
-    if(this.getPosX() < limitX) {
+  void scanLimitX() {
+    if(this.getPosX() < 300) {
       this.setPosX(this.getPosX() + this.speed);
       return;
     }
